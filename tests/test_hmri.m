@@ -130,3 +130,29 @@ hmri_write_dataset_description(out);
 description = jsondecode(fileread(file));
 verifyEqual(testCase, description.Name, 'edited by hand');
 end
+
+
+function test_7T_b1_defaults_match_published_afi_settings(testCase)
+% Values hMRI used for the published 7T maps (hMRI_map_creation_b1map_params.json).
+repo_dir = fileparts(fileparts(mfilename('fullpath')));
+testCase.applyFixture(matlab.unittest.fixtures.PathFixture(fullfile(repo_dir, 'config')));
+global hmri_def %#ok<GVMIS>
+saved = hmri_def;
+testCase.addTeardown(@() restore_hmri_def(saved));
+hmri_def = struct();
+
+hmri_b1_CBS_7T_defaults();
+
+afi = hmri_def.b1map.i3D_AFI;
+verifyEqual(testCase, afi.b1type, 'i3D_AFI');
+verifyEqual(testCase, afi.b1acq.TR2TR1ratio, 5);
+verifyEqual(testCase, afi.b1acq.alphanom, 55);
+verifyEqual(testCase, afi.b1proc.B1FWHM, 8);
+verifyFalse(testCase, afi.b1mask.domask);
+end
+
+
+function restore_hmri_def(saved)
+global hmri_def %#ok<GVMIS>
+hmri_def = saved;
+end
