@@ -3,9 +3,7 @@
 [![tests](https://github.com/LenaStroh/qMRITools/actions/workflows/tests.yml/badge.svg)](https://github.com/LenaStroh/qMRITools/actions/workflows/tests.yml)
 
 Tools for quantitative and high-resolution structural MRI that read from and
-write to [BIDS](https://bids.neuroimaging.io) datasets. Tools are published
-one by one; each one is tested and documented before it is added.
-
+write to [BIDS](https://bids.neuroimaging.io) datasets.
 ## Available tools
 
 | Tool | What it does |
@@ -14,7 +12,7 @@ one by one; each one is tested and documented before it is added.
 
 ## Requirements
 
-- MATLAB R2021a or later
+- MATLAB
 - [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) with the
   [hMRI toolbox](https://github.com/hMRI-group/hMRI-toolbox) installed in `spm12/toolbox/`
 
@@ -22,15 +20,9 @@ one by one; each one is tested and documented before it is added.
 
 The 7T results (including Stroh et al., *Science Advances*, 2026) were
 produced with the **MPI CBS fork of the hMRI toolbox** (`hMRI-cbs`), version
-`v0.2.4-335-geec6213`: 335 commits on top of hMRI v0.2.4. This fork is not
-publicly available.
-
-The defaults in [`config/hmri_CBS_7T_defaults.m`](config/hmri_CBS_7T_defaults.m)
-use settings that exist only in this fork (`higherOrderR2sModel`,
-`wcombparams.dummy_am`, `wcombparams.dummy_error`). With the public hMRI
-toolbox the code runs untested, and results may differ from the published
-ones. `hmri_create_mpm` records the hMRI version it ran with in
-`derivatives/hMRI/dataset_description.json`.
+`v0.2.4-335-geec6213`. With the public hMRI toolbox the code runs untested,
+and results may differ from the published ones. `hmri_create_mpm` records 
+the hMRI version it ran with in `derivatives/hMRI/dataset_description.json`.
 
 ## Installation
 
