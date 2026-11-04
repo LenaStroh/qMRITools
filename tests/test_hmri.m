@@ -134,7 +134,11 @@ end
 
 function test_7T_b1_defaults_match_published_afi_settings(testCase)
 % Values hMRI used for the published 7T maps (hMRI_map_creation_b1map_params.json).
+% The CBS defaults are not in the repository, so this runs only where they
+% have been copied into config/.
 repo_dir = fileparts(fileparts(mfilename('fullpath')));
+assumeTrue(testCase, isfile(fullfile(repo_dir, 'config', 'hmri_b1_CBS_7T_defaults.m')), ...
+    'config/hmri_b1_CBS_7T_defaults.m not present');
 testCase.applyFixture(matlab.unittest.fixtures.PathFixture(fullfile(repo_dir, 'config')));
 global hmri_def %#ok<GVMIS>
 saved = hmri_def;

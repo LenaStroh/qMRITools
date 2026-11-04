@@ -19,7 +19,7 @@ function out_dir = hmri_create_mpm(bids_dir, subject, session, defaults_file, b1
 %
 %   Example
 %       hmri_create_mpm('/data/bids', 'sub-01', 'ses-01', ...
-%           'config/hmri_CBS_7T_defaults.m', 'config/hmri_b1_CBS_7T_defaults.m');
+%           'config/hmri_MYSITE_defaults.m', 'config/hmri_b1_MYSITE_defaults.m');
 
 arguments
     bids_dir {mustBeFolder}

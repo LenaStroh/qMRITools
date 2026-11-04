@@ -6,7 +6,7 @@ function matlabbatch = hmri_build_batch(inputs, out_dir, defaults_file, b1_defau
 %   INPUTS is the struct returned by HMRI_FIND_INPUTS (paths must point to
 %   uncompressed .nii files). OUT_DIR is where hMRI writes its results.
 %   DEFAULTS_FILE and B1_DEFAULTS_FILE are the hMRI site/protocol defaults
-%   (e.g. config/hmri_CBS_7T_defaults.m and config/hmri_b1_CBS_7T_defaults.m).
+%   (see config/README.md).
 %
 %   The batch has two jobs: (1) load the customised hMRI defaults,
 %   (2) create the maps. RF sensitivity correction is disabled ('-'), as for

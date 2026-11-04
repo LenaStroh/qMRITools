@@ -1,20 +1,17 @@
 # hMRI defaults
 
-Site- and protocol-specific hMRI defaults used by the examples:
+Put your hMRI defaults files in this folder. `hmri_create_mpm` needs two:
 
-| File | Used for |
+| File | Contains |
 | --- | --- |
-| `hmri_CBS_7T_defaults.m` | General hMRI defaults for 7T MPM data from MPI CBS Leipzig (Magnetom/Terra) |
-| `hmri_b1_CBS_7T_defaults.m` | B1 mapping defaults for the same scanners |
+| general defaults, e.g. `hmri_MYSITE_defaults.m` | Settings for map creation, including the MPM acquisition parameters of your protocol |
+| B1 defaults, e.g. `hmri_b1_MYSITE_defaults.m` | Settings for the B1 map, including the 3D-AFI TR ratio and flip angle |
 
 They are passed to `hmri_create_mpm` as `defaults_file` and `b1_defaults_file`.
-For another scanner or protocol, start from the templates shipped with the
-hMRI toolbox (`config/local/hmri_local_defaults.m`,
-`config/hmri_b1_standard_defaults.m`) and add your own files here.
 
-## License
-
-The files in this folder are modified copies of defaults files from the
-[hMRI toolbox](https://github.com/hMRI-group/hMRI-toolbox) and are therefore
-licensed under the **GNU General Public License v2.0**, like the hMRI toolbox
-itself. The rest of this repository is MIT-licensed (see [LICENSE](../LICENSE)).
+These files are specific to a scanner and protocol, so they are not part of
+this repository, and git ignores `.m` files in this folder. The files for
+the 7T MPM protocol at MPI CBS Leipzig are available from the author on
+request. To make your own, start from the templates shipped with the hMRI
+toolbox (`config/local/hmri_local_defaults.m` and
+`config/hmri_b1_standard_defaults.m` in the hMRI folder).

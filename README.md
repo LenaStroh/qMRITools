@@ -59,8 +59,11 @@ bids/
 
 ```matlab
 hmri_create_mpm('/path/to/bids', 'sub-01', 'ses-01', ...
-    'config/hmri_CBS_7T_defaults.m', 'config/hmri_b1_CBS_7T_defaults.m');
+    'config/hmri_MYSITE_defaults.m', 'config/hmri_b1_MYSITE_defaults.m');
 ```
+
+The two hMRI defaults files hold the settings for your scanner and protocol.
+They are not included in this repository; see [config/](config/README.md).
 
 The maps are written to `bids/derivatives/hMRI/sub-01/ses-01/`. To write them
 somewhere else, pass `'OutputDir', '/other/path'`. A BIDS
@@ -69,13 +72,12 @@ dataset is not modified: gzipped inputs are decompressed into a temporary
 folder that is deleted afterwards.
 
 To process several subjects, see [examples/run_hmri_7T.m](examples/run_hmri_7T.m).
-The protocol-specific hMRI defaults are described in [config/](config/README.md).
 
 ## Repository layout
 
 ```
 matlab/      MATLAB code, one folder per tool (add matlab/ to the path)
-config/      protocol-specific settings used by the tools
+config/      your protocol-specific settings (not tracked by git)
 examples/    runnable example scripts
 tests/       unit tests (no SPM or real data needed)
 ```
