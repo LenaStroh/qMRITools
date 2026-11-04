@@ -12,7 +12,7 @@ write to [BIDS](https://bids.neuroimaging.io) datasets.
 
 ## Requirements
 
-- MATLAB
+- MATLAB R2021a or later
 - [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) with the
   [hMRI toolbox](https://github.com/hMRI-group/hMRI-toolbox) installed in `spm12/toolbox/`
 
