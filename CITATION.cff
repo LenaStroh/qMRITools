@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, and cite the hMRI toolbox (Tabelow et al., 2019, NeuroImage 194:191-210)."
+title: "qMRITools"
+authors:
+  - family-names: Stroh
+    given-names: Lena
+license: MIT
+repository-code: "https://github.com/LenaStroh/qMRITools"

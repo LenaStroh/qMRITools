@@ -1,0 +1,16 @@
+# MATLAB
+*.asv
+*.m~
+*.mat
+slprj/
+
+# Python (future toolbox parts)
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
